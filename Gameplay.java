@@ -21,10 +21,12 @@ public class Gameplay {
         try{
             if(choiceOne == "yes"){
                 System.out.println("Great! What's your name?"); 
+            }
             if(choiceOne == "no"){
                 System.out.println("Too bad! You now fall asleep and die of heat stroke. This is the first life you've lost of three so be careful!"); 
                 health -= 1; 
             }
+        }
         catch (Exception e){
             System.out.println("Something went wrong! Please either say yes or no to this question or this narrator will get angry")
         }
