@@ -4,7 +4,7 @@
  * haveItemName = if it is in your inventory 
  * treasure = what the treasure is 
  */
-public class Inventory {
+public class GameObjects {
     String itemName; 
     boolean haveItemName; 
     String treasure; 
