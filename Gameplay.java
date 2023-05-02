@@ -36,14 +36,15 @@ public class Gameplay {
         
     }
 
-    public void pathChoice(){
+    public void pathOneChoice(){
         System.out.println("We are so glad you decided to go on this adventure."); 
         System.out.println("Now you must chose who you want to go see first. Be careful though... there are dangers hissden around every corner!");
         System.out.println("Who will you decide to go see ... The Blacksmith, The Carpenter, and The Psychic. You can go see all of them, none of them, just one of them, or just two of them."); 
         System.out.println("Be careful though..."); 
-        Scanner pathChoice = new Scanner(System.in); 
+        Scanner pathOneChoiceBlacksmith = new Scanner(System.in); 
         System.out.println("Do you want to see The Blacksmith Answer yes or no"); 
-        String blacksmithChoice = pathChoice.nextLine(); 
+        String blacksmithChoice = pathOneChoiceBlacksmith.nextLine(); 
+        pathOneChoiceBlacksmith.close(); 
         try{
             if(blacksmithChoice.equals("yes")) {
                 System.out.println("Amazing choice! You must now journey to the beach town where you will meet the blacksmith."); 
@@ -55,7 +56,13 @@ public class Gameplay {
         catch (Exception e){
             System.out.println("You did not put in something valid... try again please"); 
         }  
+        Scanner pathOneChoiceCarpenter = new Scanner(System.in); 
+        System.out.println("Do you want to go see The Carpenter? Type yes or no");
+        
+        
         
     }
+
+    public static void
     
 }
