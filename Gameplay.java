@@ -8,7 +8,9 @@ import java.util.*;
  * artifactname: the artifact/tool you pick up on the way of the challenges
  */
 public class Gameplay {
-    String choices; 
+    String choices;
+    String avatarName;  
+    Double health; 
     boolean NPC; 
     String artifactName; 
     String challengeDescription; 
@@ -18,6 +20,7 @@ public class Gameplay {
         Scanner intro = new Scanner(System.in); 
         System.out.println("Enter yes or no"); 
         String choiceOne = intro.nextLine(); 
+        intro.close(); 
         try{
             if(choiceOne == "yes"){
                 System.out.println("Great! What's your name?"); 
@@ -28,8 +31,30 @@ public class Gameplay {
             }
         }
         catch (Exception e){
-            System.out.println("Something went wrong! Please either say yes or no to this question or this narrator will get angry")
+            System.out.println("Something went wrong! Please either say yes or no to this question or this narrator will get angry");
         }
+        
+    }
+
+    public void pathChoice(){
+        System.out.println("We are so glad you decided to go on this adventure."); 
+        System.out.println("Now you must chose who you want to go see first. Be careful though... there are dangers hissden around every corner!");
+        System.out.println("Who will you decide to go see ... The Blacksmith, The Carpenter, and The Psychic. You can go see all of them, none of them, just one of them, or just two of them."); 
+        System.out.println("Be careful though..."); 
+        Scanner pathChoice = new Scanner(System.in); 
+        System.out.println("Do you want to see The Blacksmith Answer yes or no"); 
+        String blacksmithChoice = pathChoice.nextLine(); 
+        try{
+            if(blacksmithChoice.equals("yes")) {
+                System.out.println("Amazing choice! You must now journey to the beach town where you will meet the blacksmith."); 
+            }
+            if (blacksmithChoice.equals("no")){
+                System.out.println("Well I hope you are sure..."); 
+            }
+        }
+        catch (Exception e){
+            System.out.println("You did not put in something valid... try again please"); 
+        }  
         
     }
     
