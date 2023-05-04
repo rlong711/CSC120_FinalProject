@@ -1,6 +1,5 @@
 import java.util.*; 
-public class Village {
+public class Village{
     
    
-    
 }
