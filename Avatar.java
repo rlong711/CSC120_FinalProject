@@ -7,10 +7,10 @@ import java.util.*;
 public class Avatar{
     String avatarName; 
     ArrayList<String> inventory; 
-    Double health;  
+    int health;  
 
-
-    public Avatar(String avatarName, Double health){
+    /* Avatar constructor */
+    public Avatar(String avatarName, int health){
         this.avatarName = avatarName; 
         this.health = health; 
         inventory = new ArrayList<String>(); 
@@ -27,7 +27,7 @@ public class Avatar{
     }
 
     public ArrayList<String> getInventory(){
-        System.out.println()
+        System.out.println();
     }
 
 
