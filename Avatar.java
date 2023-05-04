@@ -6,14 +6,14 @@
 import java.util.*; 
 public class Avatar{
     String avatarName; 
-    ArrayList<String> inventory; 
-    int health;  
+    static ArrayList<String> inventory; 
+    static int health;  
     static String location;
 
     /* Avatar constructor */
     public Avatar(String avatarName, int health, String location){
         this.avatarName = avatarName; 
-        this.health = health; 
+        this.health = 3; 
         this.location = location;
         inventory = new ArrayList<String>(); 
     }
