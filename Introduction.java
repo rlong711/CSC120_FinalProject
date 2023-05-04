@@ -20,13 +20,18 @@ public class Introduction extends Avatar {
     public void initialize() {
         System.out.println("Enter yes or no"); 
         String choiceOne = intro.nextLine();
-        if (choiceOne.equals("yes")) {
-            System.out.println("Great! You now journey into the nearby town."); 
+        try {
+            if (choiceOne.equals("yes")) {
+                System.out.println("Great! You now journey into the nearby town."); 
+            }
+            if (choiceOne.equals("no")) {
+                System.out.println("Too bad! You now fall asleep and die of heat stroke. This is the first life you've lost of three so be careful!"); 
+                health -= 1; 
+            } 
         }
-        if (choiceOne.equals("no")) {
-            System.out.println("Too bad! You now fall asleep and die of heat stroke. This is the first life you've lost of three so be careful!"); 
-            health -= 1; 
-        } 
+        catch (Exception e){
+            System.out.println("Please enter either 'yes' or 'no'");
+        }
     }
 
     public static void main(String[] args) {
