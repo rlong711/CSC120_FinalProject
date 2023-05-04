@@ -8,15 +8,18 @@ import java.util.*;
  * artifactname: the artifact/tool you pick up on the way of the challenges
  */
 public class Gameplay {
-    String choices;
     String avatarName;  
     Double health; 
-    boolean NPC; 
-    String artifactName; 
-    String challengeDescription; 
+    
+
+    public Gameplay(String avatarName, Double health){
+        this.avatarName = avatarName; 
+        this.health = health; 
+    }
+
 
     public void introduction(){
-        System.out.println("Hello" + avatarName + "! You have woken up with a note in your hand on the beach. It tells you that there is a treasure to be found! Do you want to go look for that treasure right now?"); 
+        System.out.println("Hello" + this.avatarName + "! You have woken up with a note in your hand on the beach. It tells you that there is a treasure to be found! Do you want to go look for that treasure right now?"); 
         Scanner intro = new Scanner(System.in); 
         System.out.println("Enter yes or no"); 
         String choiceOne = intro.nextLine(); 
@@ -63,6 +66,10 @@ public class Gameplay {
         
     }
 
-    public static void
+    public static void main(String args[]) {
+        Gameplay Raley = new Gameplay("Raley"); 
+
+    }
+       
     
 }
