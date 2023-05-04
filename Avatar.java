@@ -8,7 +8,7 @@ public class Avatar{
     String avatarName; 
     ArrayList<String> inventory; 
     int health;  
-    String location;
+    static String location;
 
     /* Avatar constructor */
     public Avatar(String avatarName, int health, String location){
