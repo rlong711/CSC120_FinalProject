@@ -8,11 +8,13 @@ public class Avatar{
     String avatarName; 
     ArrayList<String> inventory; 
     int health;  
+    String location;
 
     /* Avatar constructor */
-    public Avatar(String avatarName, int health){
+    public Avatar(String avatarName, int health, String location){
         this.avatarName = avatarName; 
         this.health = health; 
+        this.location = location;
         inventory = new ArrayList<String>(); 
     }
 
@@ -28,6 +30,12 @@ public class Avatar{
 
     public ArrayList<String> getInventory(){
         System.out.println();
+        return inventory;
+    }
+
+    public String getLocation(String location) {
+        System.out.println(location);
+        return location;
     }
 
 
