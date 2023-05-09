@@ -11,8 +11,6 @@ public class Introduction extends Avatar {
     /* Introduction constructor */
     public Introduction(String avatarName, int health, String location){
         super(avatarName, health, location);
-        System.out.println("What is your name?");
-        avatarName = intro.nextLine();
         System.out.println("Hello " + avatarName + "! You have woken up with a note in your hand on the beach. It tells you that there is a treasure to be found! Do you want to go look for that treasure right now?"); 
     } 
     

@@ -8,6 +8,7 @@ public class Avatar{
     protected String avatarName; 
     protected ArrayList<String> inventory; 
     protected int health;  
+    Scanner name = new Scanner(System.in); 
     protected String location;
 
     /* Avatar constructor */
@@ -23,8 +24,9 @@ public class Avatar{
      * @param avatarName
      * @return
      */
-    public String getname(String avatarName){
-        System.out.println(avatarName); 
+    public String getName(){
+        System.out.println("What is your name?");
+        avatarName = name.nextLine();
         return avatarName; 
     }
 
@@ -37,7 +39,5 @@ public class Avatar{
         System.out.println(location);
         return location;
     }
-
-    public 
 
 }
