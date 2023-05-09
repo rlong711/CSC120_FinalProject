@@ -5,10 +5,10 @@
  */
 import java.util.*; 
 public class Avatar{
-    String avatarName; 
-    static ArrayList<String> inventory; 
-    static int health;  
-    static String location;
+    protected String avatarName; 
+    protected ArrayList<String> inventory; 
+    protected int health;  
+    protected String location;
 
     /* Avatar constructor */
     public Avatar(String avatarName, int health, String location){
@@ -38,6 +38,6 @@ public class Avatar{
         return location;
     }
 
-
+    public 
 
 }
