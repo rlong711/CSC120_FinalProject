@@ -29,7 +29,7 @@ public class Avatar{
     }
 
     public ArrayList<String> getInventory(){
-        System.out.println();
+        System.out.println(inventory);
         return inventory;
     }
 
