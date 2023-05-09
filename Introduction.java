@@ -29,6 +29,7 @@ public class Introduction extends Avatar {
                 System.out.println("Too bad! You now fall asleep and die of heat stroke. This is the first life you've lost of three so be careful!"); 
                 health -= 1; 
             } 
+        } finally {
         while(!choiceOne.equals("yes") & !choiceOne.equals("no")){
             System.out.println("Invalid choice. Please type yes or no"); 
             choiceOne = intro.nextLine(); 
@@ -40,6 +41,7 @@ public class Introduction extends Avatar {
             System.out.println("Too bad! You now fall asleep and die of heat stroke. This is the first life you've lost of three so be careful!"); 
             health -= 1; 
         } 
+        }
     }
 
     public static void main(String[] args) {
