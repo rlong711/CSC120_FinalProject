@@ -50,16 +50,17 @@ public class Village {
         System.out.println("Do you want to go get iron to get a sword made? Please enter 'yes' or 'no'.");
         String goMine = village.nextLine();
         while(!goMine.equals("yes") & !goMine.equals("no")){
-            System.out.println("Invalid choice. Please type yes or no"); 
-            goMine = village.nextLine(); 
+            if (goMine.equals("yes")) {
+                System.out.println("Great! You now journey to the mine."); 
+                Avatar.location = "mine";
+            }
+            if (goMine.equals("no")) {
+                System.out.println("Okay, no sword or information for you. You now exit the smithy."); 
+            } else {
+                System.out.println("Invalid choice. Please type yes or no"); 
+                goMine = village.nextLine(); 
+            }
         }
-        if (goMine.equals("yes")) {
-            System.out.println("Great! You now journey to the mine."); 
-            Avatar.location = "mine";
-        }
-        if (goMine.equals("no")) {
-            System.out.println("Okay, no sword or information for you. You now exit the smithy."); 
-        } 
     }
 
     /* Method to get sword from blacksmith */
