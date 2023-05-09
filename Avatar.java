@@ -15,7 +15,7 @@ public class Avatar{
         this.avatarName = avatarName; 
         this.health = 3; 
         this.location = location;
-        inventory = new ArrayList<String>(); 
+        this.inventory = new ArrayList<String>(); 
     }
 
     /**

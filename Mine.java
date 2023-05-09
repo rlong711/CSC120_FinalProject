@@ -17,9 +17,9 @@ public class Mine {
     }
 
     /* Method to remove iron artifact from mine */
-    public void getIron(String artifact) {
+    public boolean getIron(Avatar inventory) {
         mineArtifact.remove("Iron");
-        Avatar(avatarName.inventory.add("Iron"));
+        inventory.add("Iron");
         System.out.println("You have gotten iron from the mine and it has been added to your inventory.");
         System.out.println("Return to town to have a sword made by the blacksmith");
     }
