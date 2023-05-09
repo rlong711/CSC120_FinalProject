@@ -6,10 +6,10 @@
 import java.util.*; 
 public class Avatar{
     protected String avatarName; 
-    protected ArrayList<String> inventory; 
-    protected int health;  
+    protected static ArrayList<String> inventory; 
+    protected static int health;  
     Scanner name = new Scanner(System.in); 
-    protected String location;
+    protected static String location;
 
     /* Avatar constructor */
     public Avatar(String avatarName, int health, String location){

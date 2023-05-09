@@ -8,7 +8,7 @@ public class Mine {
     /* Mine constructor */
     public Mine(String location, String artifact) {
         this.location = "Mine";
-        this.mineArtifact = new ArrayList<String> ();
+        this.mineArtifact = new ArrayList<String>();
     }
 
     /* Method to add iron artifact to mine */
@@ -17,18 +17,19 @@ public class Mine {
     }
 
     /* Method to remove iron artifact from mine */
-    public boolean getIron(Avatar inventory) {
+    public boolean getIron() {
         mineArtifact.remove("Iron");
-        inventory.add("Iron");
+        Avatar.inventory.add("Iron");
         System.out.println("You have gotten iron from the mine and it has been added to your inventory.");
         System.out.println("Return to town to have a sword made by the blacksmith");
+        return true;
     }
 
 
     public static void main(String[] args) {
         Mine mine = new Mine("Mine", "Iron");
         mine.addIron("Iron");
-        mine.getIron("Iron");
+        mine.getIron();
     }
 
 }
