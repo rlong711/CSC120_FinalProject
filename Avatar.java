@@ -5,30 +5,19 @@
  */
 import java.util.*; 
 public class Avatar{
-    protected String avatarName; 
     protected static ArrayList<String> inventory; 
     protected static int health;  
     Scanner name = new Scanner(System.in); 
     protected static String location;
 
     /* Avatar constructor */
-    public Avatar(String avatarName, int health, String location){
-        this.avatarName = avatarName; 
+    public Avatar(int health, String location){
         this.health = 3; 
         this.location = location;
         this.inventory = new ArrayList<String>(); 
     }
 
-    /**
-     * accessor for the name 
-     * @param avatarName
-     * @return
-     */
-    public String getName(){
-        System.out.println("What is your name?");
-        avatarName = name.nextLine();
-        return avatarName; 
-    }
+   
 
     public ArrayList<String> getInventory(){
         System.out.println(inventory);

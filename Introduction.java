@@ -9,9 +9,9 @@ public class Introduction extends Avatar {
     boolean Start;
 
     /* Introduction constructor */
-    public Introduction(String avatarName, int health, String location){
-        super(avatarName, health, location);
-        System.out.println("Hello " + avatarName + "! You have woken up with a note in your hand on the beach. It tells you that there is a treasure to be found! Do you want to go look for that treasure right now?"); 
+    public Introduction(int health, String location){
+        super(health, location);
+        System.out.println("Hello! You have woken up with a note in your hand on the beach. It tells you that there is a treasure to be found! Do you want to go look for that treasure right now?"); 
     } 
     
     /* Method to initialize the game */
@@ -32,18 +32,11 @@ public class Introduction extends Avatar {
             System.out.println("Invalid choice. Please type yes or no"); 
             choiceOne = intro.nextLine(); 
         }
-        if (choiceOne.equals("yes")) {
-            System.out.println("Great! You now journey into the nearby town."); 
-        }
-        if (choiceOne.equals("no")) {
-            System.out.println("Too bad! You now fall asleep and die of heat stroke. This is the first life you've lost of three so be careful!"); 
-            health -= 1; 
-        } 
-        }
+    }
     }
 
     public static void main(String[] args) {
-        Introduction startGame = new Introduction(avatarName, 3, "beach");
+        Introduction startGame = new Introduction(3,"beach");
         startGame.initialize();
     }
 }
