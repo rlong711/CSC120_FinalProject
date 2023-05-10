@@ -1,5 +1,5 @@
 import java.util.*;
-public class Mine {
+public class Mine{
   
     protected String location;
     private ArrayList<String> mineArtifact;
@@ -22,6 +22,7 @@ public class Mine {
         Avatar.inventory.add("Iron");
         System.out.println("You have gotten iron from the mine and it has been added to your inventory.");
         System.out.println("Return to town to have a sword made by the blacksmith");
+        System.out.println(Avatar.inventory);
         return true;
     }
 
