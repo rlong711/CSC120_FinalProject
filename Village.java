@@ -85,9 +85,8 @@ public class Village {
 
     /* Method to talk to carpenter */
     public static void carpenter(String location) {
-        location = "Beach Village";
-        System.out.println("The carpenter says the quickest way to the treasure is the by taking the middle path of the ones going out of the village, up the mountain, and down the stream to the lake.");
-        System.out.println("The carpenter offers you a raft to ride down the river. Do you want to take the raft? Please enter 'yes' or 'no'.");
+        location = "Beach Village";;
+        System.out.println("The carpenter offers you a raft. Do you want to take the raft? Please enter 'yes' or 'no'.");
         String carpenterChoice = village.nextLine();
         while(!carpenterChoice.equals("yes") & !carpenterChoice.equals("no")){
             System.out.println("Invalid choice. Please type yes or no"); 
