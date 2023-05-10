@@ -132,9 +132,9 @@ public class Village {
         System.out.println("Well now that the Harold is gone, you continueon your journey and stumble upon a lake."); 
         System.out.println("You look at this lake and are not sure if the treasure could be in there or not."); 
         System.out.println("HINT: What did the psychic tell you?"); 
-        System.out.println("Would you like to look in the lake? Or would you like to continue walking. Enter yes or no to let us know."); 
+        System.out.println("Would you like to look in the lake? Or do you want to continue moving? Enter lake or no to let us know."); 
         String lakeAction = village.nextLine();
-        if (lakeAction.equals("yes")){
+        if (lakeAction.equals("lake")){
             System.out.println("Good choice! The psychic told you that the treasure was in a lake, and this is that very lake!"); 
             Village.findTreasure(); 
         }
@@ -144,7 +144,7 @@ public class Village {
             Village.findTreasure(); 
         }
         while(!lakeAction.equals("yes") & !lakeAction.equals("no")){
-            System.out.println("Invalid input. Type yes or no");
+            System.out.println("Invalid input. Type lake or no");
             lakeAction = village.nextLine(); 
         }
     }
