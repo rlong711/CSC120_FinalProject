@@ -1,15 +1,23 @@
 import java.util.*; 
+/**
+ * This class holds all the methods for the parts of the game that happen in the beach village. 
+ */
 public class Village {
     String location;
     static Scanner village = new Scanner(System.in);
    
 
-    /* Village constructor */
+    /**
+     * This is the Village Constructor
+     * @param location Where in the game the player currently is. 
+     */
     public Village(String location) {
         this.location = location;
     }
 
-    /* Method for initial beach village entrance */
+   /**
+    * This method initializes the beach village and starts the beginning part of the game where you decide who/if you want to talk to an NPC. 
+    */
     public static void beachVillage() {
         Avatar.location = "Beach Village";
         System.out.println("You enter the village by the beach and see a busy street. Do you want to talk to some people or continue straight through the village?");
@@ -17,6 +25,8 @@ public class Village {
         String villageAction = village.nextLine();
         if (villageAction.equals("walk")) {
             System.out.println("You choose not to talk to anyone and continue through the village."); 
+            Village.pathToTreasureBear("path");
+            
         } 
         if (villageAction.equals("talk")) {
             System.out.println("Great! You decide the village blacksmith, carpenter, and psychic are probably the best to talk to."); 
@@ -45,7 +55,11 @@ public class Village {
         }
     }
 
-    /* Method to talk to blacksmith */
+    
+    /**
+     * This method is for the player talking to the blacksmith. 
+     * @param location Where the player currently is in the game. 
+     */
     public static void blacksmith(String location) {
         location = "Beach Village";
         System.out.println("The blacksmith tells you that she will tell you about the terrain and make you a sword if you go get iron from the mine.");
@@ -67,7 +81,9 @@ public class Village {
         }
     }
 
-    /* Method to get sword from blacksmith */
+    /**
+     * Method to get sword from blacksmith
+     */
     public static void blacksmithSword() {
         if (Avatar.inventory.contains("Iron")) {
             System.out.println("You return to the blacksmith and give her the iron from the mine. She returns to you with a sword in hand.");
@@ -81,7 +97,9 @@ public class Village {
         }
     }
 
-    /* Method to talk to more people after blacksmith */
+    /** 
+    * Method to talk to more people after blacksmith 
+    */
     public static void talkMoreBlacksmith() {
         System.out.println("Is there anyone else you would like to talk to? Please enter yes or no.");
         String talkMoreBlacksmith = village.nextLine();
@@ -104,7 +122,9 @@ public class Village {
         }
     }
 
-    /* Method to talk to carpenter */
+    /**
+     *  Method to talk to carpenter 
+     */
     public static void carpenter(String location) {
         location = "Beach Village";;
         System.out.println("The carpenter offers you a raft. Do you want to take the raft? Please enter 'yes' or 'no'.");
@@ -124,7 +144,9 @@ public class Village {
         } 
     }
 
-    /* Method to talk to people after carpenter */
+    /** 
+    * Method to talk to people after carpenter 
+    */
     public static void talkMoreCarpenter() {
         System.out.println("Is there anyone else you would like to talk to? Please enter yes or no.");
         String talkMoreCarpenter = village.nextLine();
@@ -146,7 +168,9 @@ public class Village {
         }
     }
 
-    /* Method to talk to psychic */
+    /**
+    * Method to talk to psychic 
+    */
     public static void psychic(String location) {
         location = "Beach Village";
         System.out.println("You approach the psychic and she tells you that there is only one path to the treasure, but you will encounter difficulties never before seen.");
@@ -156,7 +180,9 @@ public class Village {
         Village.talkMorePsychic();
     }
 
-    /* Method to talk to more people after psychic */
+    /**
+     *  Method to talk to more people after psychic 
+     */
     public static void talkMorePsychic() {
         System.out.println("Is there anyone else you would like to talk to? Please enter yes or no.");
         String talkMorePsychic = village.nextLine();
@@ -178,7 +204,11 @@ public class Village {
             pathToTreasureBear("Path to Treasure");
         }
     }
-
+    
+    /**
+     * Method for interaction with bear when walking on the path to the treasure. 
+     * @param location The player's location. 
+     */
     public static void pathToTreasureBear(String location){
         location = "Path to Treasure"; 
         System.out.println("Now that you have talked to everyone you wanted to, it is time to journey to the treasure."); 
@@ -194,21 +224,13 @@ public class Village {
             System.out.println("This is how many lives you have left now: " + Avatar.health); 
             System.out.println("Please press enter to continue.");
             String wakeUp = village.nextLine();
-            System.out.println("You wake up in the village by the beach. Do you want to talk to anyone?");
-            System.out.println("Please enter 'yes' or 'no'");
-            wakeUp = village.nextLine();
-            if (wakeUp.equals("yes")) {
-                Village.beachVillage();
-            }
-            if (wakeUp.equals("no")) {
-                System.out.println("You will die again on the path, so we'll save you the trouble of walking on it.");
-                System.out.println("You have lost a life!");
-                Avatar.health =-1;
-                Village.beachVillage();
-            }
         }
     }
 
+    /**
+     * Method to continue past the lake or go into the lake looking for the treasure. 
+     * @param location the player's location.
+     */
     public static void pathToTreasureLake(String location){
         location = "Path to Treasure"; 
         System.out.println("Well now that the Harold is gone, you continue on your journey and stumble upon a lake."); 
@@ -221,7 +243,7 @@ public class Village {
             Village.findTreasure(); 
         }
         if (lakeAction.equals("no")){
-            System.out.println("Interesting choice. Anyway... you walk past the lake and are immediately abducted by aliens and lose a life."); 
+            System.out.println("Interesting choice. Anyway... you walk past the lake and are immediately abducted by aliens and lose a life. But they revive you and drop you back off."); 
             Avatar.health -= 1; 
             Village.findTreasure(); 
         }
@@ -231,6 +253,9 @@ public class Village {
         }
     }
     
+    /**
+     * Method to go get the treasure if you have a 
+     */
     public static void findTreasure(){
         System.out.println("As you reach the lake you take a breath to look at the water."); 
         System.out.println("Speaking of water... you do have a raft to go across right? You need to get to that treasure quickly because in the distance you hear pirates chasing you who want the treasure for themselves"); 
