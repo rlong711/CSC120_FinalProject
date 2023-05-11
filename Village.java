@@ -10,7 +10,8 @@ public class Village {
     }
 
     /* Method for initial beach village entrance */
-    public void beachVillage() {
+    public static void beachVillage() {
+        Avatar.location = "Beach Village";
         System.out.println("You enter the village by the beach and see a busy street. Do you want to talk to some people or continue straight through the village?");
         System.out.println("Please enter 'talk' or 'walk'.");
         String villageAction = village.nextLine();
@@ -123,12 +124,26 @@ public class Village {
             System.out.println("You lose a life..."); 
             Avatar.health -= 1; 
             System.out.println("This is how many lives you have left now: " + Avatar.health); 
+            String wakeUp = village.nextLine();
+            System.out.println("You wake up in the village by the beach. Do you want to talk to anyone?");
+            System.out.println("Please enter 'yes' or 'no'");
+            wakeUp = village.nextLine();
+            if (wakeUp.equals("yes")) {
+                Village.beachVillage();
+            }
+            if (wakeUp.equals("no")) {
+                System.out.println("You will die again on the path, so we'll save you the trouble of walking on it.");
+                System.out.println("You have lost a life!");
+                Avatar.health =-1;
+                Village.beachVillage();
+            }
+            
         }
     }
 
     public static void pathToTreasureLake(String location){
         location = "Path to Treasure"; 
-        System.out.println("Well now that the Harold is gone, you continueon your journey and stumble upon a lake."); 
+        System.out.println("Well now that the Harold is gone, you continue on your journey and stumble upon a lake."); 
         System.out.println("You look at this lake and are not sure if the treasure could be in there or not."); 
         System.out.println("HINT: What did the psychic tell you?"); 
         System.out.println("Would you like to look in the lake? Or do you want to continue moving? Enter lake or no to let us know."); 
