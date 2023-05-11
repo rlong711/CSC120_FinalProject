@@ -17,8 +17,6 @@ public class Gameplay{
         startGame.initialize();
         Village newVillage = new Village("beach"); 
         newVillage.beachVillage(); 
-        newVillage.pathToTreasureBear("Path to Treasure");
-        newVillage.pathToTreasureLake("Path to Treasure");
         System.out.println("Your health level out of 3 is at " + Avatar.health); 
        
     }

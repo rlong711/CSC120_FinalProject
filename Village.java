@@ -216,6 +216,7 @@ public class Village {
         System.out.println("Oh no.... It's a beach bear named Harold!! Do not panic though, you do have a sword right?"); 
         if (Avatar.inventory.contains("sword")){
             System.out.println("Yay you have a sword! You use the sword to get rid of that beach bear and continue on your journey"); 
+            Village.pathToTreasureLake("path to treasure"); 
         }
         if(!Avatar.inventory.contains("sword")){
             System.out.println("Wow... you had no sword and you stood no chance against that beach bear named Harold..."); 
@@ -224,6 +225,7 @@ public class Village {
             System.out.println("This is how many lives you have left now: " + Avatar.health); 
             System.out.println("Please press enter to continue.");
             String wakeUp = village.nextLine();
+            Village.pathToTreasureLake("path to Treasure"); 
         }
     }
 
