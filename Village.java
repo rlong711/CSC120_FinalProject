@@ -256,7 +256,7 @@ public class Village {
     }
     
     /**
-     * Method to go get the treasure if you have a 
+     * Method to go find the treasure out on the lake. 
      */
     public static void findTreasure(){
         System.out.println("As you reach the lake you take a breath to look at the water."); 
@@ -273,6 +273,9 @@ public class Village {
         }
     }
 
+    /**
+     * Method to go retrieve the treasure. 
+     */
     public static void retrieveTreasure(){
         if (Avatar.health > 0) {
             System.out.println("As you paddle out into the lake, you suddenly see something glittering below the surface. You also see a rope, and you struggle to pull something heavy up."); 

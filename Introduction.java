@@ -1,6 +1,8 @@
 import java.util.*; 
 
-
+/**
+ * Class that contains method for the beginning of the game.
+ */
 public class Introduction extends Avatar {
 
     static String avatarName;  
@@ -8,13 +10,19 @@ public class Introduction extends Avatar {
     Scanner intro = new Scanner(System.in); 
     boolean Start;
 
-    /* Introduction constructor */
+    /**
+     * Constructor for the introduction class. 
+     * @param health The health level out of 3 of the player. 
+     * @param location The location of the player in the game. 
+     */
     public Introduction(int health, String location){
         super(health, location);
         System.out.println("Hello! You have woken up with a note in your hand on the beach. It tells you that there is a treasure to be found! Do you want to go look for that treasure right now?"); 
     } 
     
-    /* Method to initialize the game */
+    /** 
+    * Method to initialize the game 
+    */
     public void initialize() {
         System.out.println("Enter yes or no"); 
         String choiceOne = intro.nextLine();
@@ -35,6 +43,10 @@ public class Introduction extends Avatar {
     }
     }
 
+    /**
+     * Main method for the introduction class/
+     * @param args The health of the player and where the player is located in the game. 
+     */
     public static void main(String[] args) {
         Introduction startGame = new Introduction(3,"beach");
         startGame.initialize();
