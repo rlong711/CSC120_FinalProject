@@ -45,8 +45,6 @@ public class Village {
         }
     }
 
-    
-
     /* Method to talk to blacksmith */
     public static void blacksmith(String location) {
         location = "Beach Village";
@@ -67,10 +65,7 @@ public class Village {
             System.out.println("Invalid choice. Please type yes or no"); 
             goMine = village.nextLine(); 
         }
-        
     }
-
-    
 
     /* Method to get sword from blacksmith */
     public static void blacksmithSword() {
@@ -79,8 +74,33 @@ public class Village {
             Avatar.inventory.remove("Iron");
             Avatar.inventory.add("sword");
             System.out.println("You now have a sword in your inventory! You say thanks to the blacksmith and leave the smithy");
+            Village.talkMoreBlacksmith();
         } else {
             System.out.println("You do not have the iron needed to make this sword. Looks like you're stuck... good luck to you!"); 
+            Village.talkMoreBlacksmith();
+        }
+    }
+
+    /* Method to talk to more people after blacksmith */
+    public static void talkMoreBlacksmith() {
+        System.out.println("Is there anyone else you would like to talk to? Please enter yes or no.");
+        String talkMoreBlacksmith = village.nextLine();
+        if (talkMoreBlacksmith.equals("yes")) {
+            System.out.println("Who would you like to talk to? Please enter 'carpenter' or 'psychic'.");
+            talkMoreBlacksmith = village.nextLine();
+            if (talkMoreBlacksmith.equals("carpenter")) {
+                Village.carpenter("Beach Village");
+            }
+            if (talkMoreBlacksmith.equals("psychic")) {
+                Village.psychic("Beach Village");
+            } 
+            while (!talkMoreBlacksmith.equals("carpenter") & !talkMoreBlacksmith.equals("psychic")){
+                System.out.println("Invalid choice. Please type 'carpenter' or 'psychic'"); 
+                talkMoreBlacksmith = village.nextLine();
+            }
+        }
+        if (talkMoreBlacksmith.equals("no")) {
+            Village.pathToTreasureBear("Path to Treasure");
         }
     }
 
@@ -96,10 +116,34 @@ public class Village {
         if (carpenterChoice.equals("yes")) {
             System.out.println("Great! You now have a raft in your inventory. You say thank you to the carpenter and leave their shop."); 
             Avatar.inventory.add("raft");
+            Village.talkMoreCarpenter();
         }
         if (carpenterChoice.equals("no")) {
             System.out.println("Okay, no raft for you. You now exit the carpenter's shop."); 
+            Village.talkMoreCarpenter();
         } 
+    }
+
+    /* Method to talk to people after carpenter */
+    public static void talkMoreCarpenter() {
+        System.out.println("Is there anyone else you would like to talk to? Please enter yes or no.");
+        String talkMoreCarpenter = village.nextLine();
+        if (talkMoreCarpenter.equals("yes")) {
+            System.out.println("Who would you like to talk to? Please enter 'blacksmith' or 'psychic'.");
+            talkMoreCarpenter = village.nextLine();
+            if (talkMoreCarpenter.equals("blacksmith")) {
+                Village.blacksmith("Beach Village");
+            }
+            if (talkMoreCarpenter.equals("psychic")) {
+                Village.psychic("Beach Village");
+            } else {
+                System.out.println("Invalid choice. Please type 'blacksmith' or 'psychic'"); 
+                talkMoreCarpenter = village.nextLine();
+            }
+        }
+        if (talkMoreCarpenter.equals("no")) {
+            pathToTreasureBear("Path to Treasure");
+        }
     }
 
     /* Method to talk to psychic */
@@ -109,6 +153,30 @@ public class Village {
         System.out.println("You tell her that is unnecessarily vague, and she tells you that on the path you will encounter a strange beach bear and that the treasure is in a lake...");
         System.out.println("You now exit the psychics house.");
         Avatar.location = "Beach Village";
+        Village.talkMorePsychic();
+    }
+
+    /* Method to talk to more people after psychic */
+    public static void talkMorePsychic() {
+        System.out.println("Is there anyone else you would like to talk to? Please enter yes or no.");
+        String talkMorePsychic = village.nextLine();
+        if (talkMorePsychic.equals("yes")) {
+            System.out.println("Who would you like to talk to? Please enter 'blacksmith' or 'carpenter'.");
+            talkMorePsychic = village.nextLine();
+            if (talkMorePsychic.equals("blacksmith")) {
+                Village.blacksmith("Beach Village");
+            }
+            if (talkMorePsychic.equals("carpenter")) {
+                Village.psychic("Beach Village");
+            } 
+            if (!talkMorePsychic.equals("carpenter") & !talkMorePsychic.equals("psychic")) {
+                System.out.println("Invalid choice. Please type 'blacksmith' or 'psychic'"); 
+                talkMorePsychic = village.nextLine();
+            }
+        }
+        if (talkMorePsychic.equals("no")) {
+            pathToTreasureBear("Path to Treasure");
+        }
     }
 
     public static void pathToTreasureBear(String location){
@@ -117,13 +185,14 @@ public class Village {
         System.out.println("As you are walking along the path, you hear a rustling of leaves"); 
         System.out.println("Oh no.... It's a beach bear named Harold!! Do not panic though, you do have a sword right?"); 
         if (Avatar.inventory.contains("sword")){
-            System.out.println("Yay you have a sword! You use tha sword to get rid of that beach bear and continue on your journey"); 
+            System.out.println("Yay you have a sword! You use the sword to get rid of that beach bear and continue on your journey"); 
         }
         if(!Avatar.inventory.contains("sword")){
             System.out.println("Wow... you had no sword and you stood no chance against that beach bear named Harold..."); 
             System.out.println("You lose a life..."); 
             Avatar.health -= 1; 
             System.out.println("This is how many lives you have left now: " + Avatar.health); 
+            System.out.println("Please press enter to continue.");
             String wakeUp = village.nextLine();
             System.out.println("You wake up in the village by the beach. Do you want to talk to anyone?");
             System.out.println("Please enter 'yes' or 'no'");
@@ -137,7 +206,6 @@ public class Village {
                 Avatar.health =-1;
                 Village.beachVillage();
             }
-            
         }
     }
 
