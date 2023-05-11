@@ -45,4 +45,4 @@ This class holds the majority of the methods for our game
 11. findTreasure() - Avatar reaches the lake where they're told pirates are chasing them. If they have a raft (retrieved from the carpenter), they can get into the lake where danger of pirates passes. If they don't have a raft, they try swimming but the pirates catch you and take a life. The game ends here.
 12. retrieveTreasure() - Avatar gets to the middle of the lake where they retrieve the treasure! If they have no more lives, they can't reach the treasure and the game ends.
 
-Gameplay Class:
+Gameplay Class: There are no methods in this class, so there are no commands you can invoke from this class. This class compiles all of our other classes so it can run the game. 
