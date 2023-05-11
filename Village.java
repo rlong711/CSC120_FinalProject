@@ -225,7 +225,7 @@ public class Village {
             Avatar.health -= 1; 
             Village.findTreasure(); 
         }
-        while(!lakeAction.equals("yes") & !lakeAction.equals("no")){
+        if (!lakeAction.equals("yes") & !lakeAction.equals("no")){
             System.out.println("Invalid input. Type lake or no");
             lakeAction = village.nextLine(); 
         }
